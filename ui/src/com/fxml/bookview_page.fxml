@@ -1,0 +1,78 @@
+<?language javascript?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.controllers.BookViewPageController" alignment="center" hgap="5">
+    <opaqueInsets>
+        <Insets bottom="10" top="10" left="10" right="10"/>
+    </opaqueInsets>
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="53"/>
+        <ColumnConstraints fx:id="infoColumn" hgrow="SOMETIMES" percentWidth="46"/>
+    </columnConstraints>
+    <VBox GridPane.columnIndex="0" alignment="CENTER">
+        <ImageView fx:id="imageView">
+        </ImageView>
+    </VBox>
+    <VBox GridPane.columnIndex="1" minWidth="${infoColumn.prefWidth}" spacing="10" alignment="CENTER_LEFT">
+        <HBox spacing="5" GridPane.rowIndex="0">
+            <Label text="Название" minWidth="-Infinity"/>
+            <Label fx:id="nameLabel" text="name" wrapText="true"/>
+        </HBox>
+        <HBox spacing="5" GridPane.rowIndex="1">
+            <Label text="Автор:" minWidth="-Infinity"/>
+            <Label fx:id="authorLabel" text="author" wrapText="true"/>
+        </HBox>
+        <HBox spacing="5" GridPane.rowIndex="2">
+            <Label text="Издательство:" minWidth="-Infinity"/>
+            <Label fx:id="publishingHouseLabel" text="price" wrapText="true"/>
+        </HBox>
+        <HBox spacing="5" GridPane.rowIndex="3">
+            <Label text="Описание:" minWidth="-Infinity"/>
+            <Label fx:id="discriptionLabel" text="discription" wrapText="true"/>
+        </HBox>
+        <HBox spacing="5" GridPane.rowIndex="4">
+            <Label text="Цена:" minWidth="-Infinity"/>
+            <Label fx:id="priceLabel" text="price" wrapText="true"/>
+            <Label text="(руб.)"/>
+        </HBox>
+        <HBox spacing="5" GridPane.rowIndex="5">
+            <Label text="ISBN:" minWidth="-Infinity"/>
+            <Label fx:id="ISBNLabel" text="isbn" wrapText="true"/>
+        </HBox>
+        <HBox spacing="5" GridPane.rowIndex="6">
+            <Label text="Количество страниц:" minWidth="-Infinity"/>
+            <Label fx:id="pagesLabel" text="-1" wrapText="true"/>
+        </HBox>
+        <HBox spacing="5" GridPane.rowIndex="7">
+            <Label text="Тираж:" minWidth="-Infinity"/>
+            <Label fx:id="pressRunLabel" text="-1" wrapText="true"/>
+        </HBox>
+        <HBox spacing="5" GridPane.rowIndex="8">
+            <Label text="Осталось:" minWidth="-Infinity"/>
+            <Label fx:id="quanityLabel" text="price" wrapText="true"/>
+            <Label text="(шт.)"/>
+        </HBox>
+        <HBox spacing="5" GridPane.rowIndex="8">
+            <Label text="Дата поступления в продажу:"/>
+            <Label fx:id="dateLabel" text="00/00/0000" wrapText="true"/>
+        </HBox>
+        <HBox spacing="5" GridPane.rowIndex="9" alignment="BASELINE_RIGHT">
+            <Button fx:id="closeButton" text="Закрыть" prefHeight="50" minWidth="${removeFromCartButton.width}"
+                    onAction="#closeButtonClick"/>
+            <Button fx:id="addToCartButton" text="Добавить в корзину" prefHeight="50" minWidth="${removeFromCartButton.width}"
+                    onAction="#addToCartButtonClick" disable="true"/>
+            <Button fx:id="removeFromCartButton" text="Удалить из корзины" prefHeight="50"
+                    minWidth="-Infinity" onAction="#removeFromCartButtonClick" disable="true"/>
+        </HBox>
+        <HBox spacing="5" GridPane.rowIndex="10" alignment="BOTTOM_CENTER">
+            <Label fx:id="cartLabel" text="В корзине:" prefHeight="50" minWidth="${removeFromCartButton.width}"/>
+            <Label fx:id="cartStatus" prefHeight="50" minWidth="-Infinity"/>
+            <Label fx:id="entryLabel" text="Пожалуйста, выполните вход" prefHeight="50"
+                   minWidth="${removeFromCartButton.width}"/>
+        </HBox>
+    </VBox>
+</GridPane>

@@ -1,0 +1,30 @@
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.*?>
+<TableView
+        xmlns:fx="http://javafx.com/fxml">
+    <columnResizePolicy>
+        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+    </columnResizePolicy>
+    <columns>
+        <TableColumn text="автор" prefWidth="340">
+            <cellValueFactory>
+                <PropertyValueFactory property="author"/>
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Имя" prefWidth="340">
+            <cellValueFactory>
+                <PropertyValueFactory property="name"/>
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Издательство" prefWidth="340">
+            <cellValueFactory>
+                <PropertyValueFactory property="publishingHouse"/>
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Цена" prefWidth="340">
+            <cellValueFactory>
+                <PropertyValueFactory property="price"/>
+            </cellValueFactory>
+        </TableColumn>
+    </columns>
+</TableView>

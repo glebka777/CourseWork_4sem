@@ -1,0 +1,45 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.controllers.LoginPageController" alignment="center" onKeyPressed="#keyListener"
+          vgap="10">
+    <padding>
+        <Insets right="50" left="100" bottom="50" top="0"/>
+    </padding>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="50"/>
+        <ColumnConstraints percentWidth="50"/>
+    </columnConstraints>
+    <HBox alignment="CENTER" GridPane.rowIndex="0"
+          GridPane.columnSpan="2">
+        <Label text="Добро пожаловать!" minWidth="-Infinity">
+            <font>
+                <Font size="26"/>
+            </font>
+        </Label>
+    </HBox>
+
+    <HBox alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <Label text="Имя пользователя:  " minWidth="-Infinity"/>
+    </HBox>
+    <TextField fx:id="loginField" prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="1"
+               alignment="CENTER_LEFT"/>
+
+    <HBox alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <Label text="Пароль:  " minWidth="-Infinity"/>
+    </HBox>
+    <PasswordField fx:id="passwordField" prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                   alignment="CENTER_LEFT"/>
+
+    <HBox alignment="BASELINE_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="3">
+        <Button fx:id="backButton" text="Назад" prefWidth="100" onAction="#backButtonClick" alignment="BOTTOM_CENTER"/>
+    </HBox>
+    <HBox alignment="BASELINE_RIGHT" GridPane.columnIndex="1"
+          GridPane.rowIndex="3">
+        <Button fx:id="loginButton" text="Войти" prefWidth="100" onAction="#loginButtonClick"/>
+    </HBox>
+
+
+</GridPane>

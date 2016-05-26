@@ -1,0 +1,40 @@
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.*?>
+<TableView
+        xmlns:fx="http://javafx.com/fxml">
+    <columnResizePolicy>
+        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+    </columnResizePolicy>
+    <columns>
+        <TableColumn text="Книги" prefWidth="700">
+            <cellValueFactory>
+                <PropertyValueFactory property="books"/>
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Адрес доставки" prefWidth="400">
+            <cellValueFactory>
+                <PropertyValueFactory property="destination"/>
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Дата оформления заказа" prefWidth="200">
+            <cellValueFactory>
+                <PropertyValueFactory property="orderDate"/>
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Дата доставки" prefWidth="200">
+            <cellValueFactory>
+                <PropertyValueFactory property="deliveryDate"/>
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Сумма (руб.)" prefWidth="150">
+            <cellValueFactory>
+                <PropertyValueFactory property="price"/>
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Статус заказа" prefWidth="150">
+            <cellValueFactory>
+                <PropertyValueFactory property="status"/>
+            </cellValueFactory>
+        </TableColumn>
+    </columns>
+</TableView>

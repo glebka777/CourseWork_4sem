@@ -1,0 +1,76 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.controllers.PersonalPageController" alignment="TOP_CENTER" spacing="20" fx:id="root">
+    <padding>
+        <Insets left="50" right="50" top="50" bottom="50"/>
+    </padding>
+    <HBox spacing="20" alignment="CENTER">
+        <Label fx:id="firstNameLabel" text="Имя" prefWidth="225" wrapText="true">
+            <font>
+                <Font size="18"/>
+            </font>
+        </Label>
+        <Label fx:id="lastNameLabel" text="Фамилия" prefWidth="225" wrapText="true">
+            <font>
+                <Font size="18"/>
+            </font>
+        </Label>
+        <Label fx:id="phoneNumberLabel" text="Номер телефона" prefWidth="225" wrapText="true">
+            <font>
+                <Font size="18"/>
+            </font>
+        </Label>
+        <Label fx:id="addressLabel" text="Адрес" prefWidth="225" wrapText="true">
+            <font>
+                <Font size="18"/>
+            </font>
+        </Label>
+        <Label fx:id="emailLabel" text="E-mail" prefWidth="225" wrapText="true">
+            <font>
+                <Font size="18"/>
+            </font>
+        </Label>
+        <VBox>
+            <Button fx:id="changePasswordButton" text="Изменить пароль" onAction="#changePasswordButtonClick"
+                    prefWidth="225"/>
+            <Button fx:id="changeAddressButton" text="Изменить адрес доставки" onAction="#changeAddressButtonClick"
+                    prefWidth="225"/>
+            <Button fx:id="logOutButton" text="Выход" onAction="#logOutButtonClick" prefWidth="225"/>
+        </VBox>
+    </HBox>
+    <HBox fx:id="tableContainer">
+        <fx:include source="cartview.fxml" fx:id="cartTable"/>
+        <fx:include source="orderView.fxml" fx:id="orderTable"/>
+    </HBox>
+    <HBox alignment="BOTTOM_CENTER" prefWidth="${root.width}">
+        <HBox alignment="TOP_LEFT" prefWidth="${root.width/2}">
+            <ToggleButton fx:id="cartSwitch" text="Корзина" prefWidth="100" onAction="#switchToCartTable"
+                          selected="true"/>
+            <ToggleButton fx:id="orderSwitch" text="Заказы" prefWidth="100" onAction="#switchToOrderTable"/>
+        </HBox>
+        <HBox alignment="BOTTOM_RIGHT" prefWidth="${root.width/2}">
+            <HBox spacing="100">
+                <HBox alignment="BASELINE_CENTER">
+                    <Label text="Выберите дату доставки:  " wrapText="true"/>
+                    <DatePicker fx:id="calendar"/>
+                </HBox>
+                <VBox spacing="5" alignment="CENTER_RIGHT">
+                    <HBox alignment="CENTER">
+                        <Label text="Сумма: " prefWidth="80"/>
+                        <TextField text="0" fx:id="summaryField" minWidth="-Infinity" editable="false"/>
+                    </HBox>
+                    <Button fx:id="applyButton" text="Подтвердить заказ" onAction="#applyButtonClick" prefWidth="150"
+                            prefHeight="75"/>
+                    <Rectangle height="10"/>
+                    <Button fx:id="backButton" text="Назад" onAction="#backButtonClick" prefWidth="150"
+                            prefHeight="50"/>
+                </VBox>
+            </HBox>
+        </HBox>
+    </HBox>
+
+</VBox>

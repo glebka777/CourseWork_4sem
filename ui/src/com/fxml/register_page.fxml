@@ -1,0 +1,81 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.controllers.RegisterPageController" alignment="center" vgap="10" onKeyPressed="#keyListener">
+    <padding>
+        <Insets right="50" left="100" bottom="50" top="0"/>
+    </padding>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="50"/>
+        <ColumnConstraints percentWidth="50"/>
+    </columnConstraints>
+    <Label wrapText="true" text="Пожалуйста, введите следующие данные:" textAlignment="CENTER" GridPane.rowIndex="0"
+           GridPane.columnSpan="2">
+        <font>
+            <Font size="18"/>
+        </font>
+    </Label>
+
+    <HBox alignment="CENTER_RIGHT" GridPane.rowIndex="1" GridPane.columnIndex="0">
+        <Label text="Имя:  " minWidth="-Infinity"/>
+    </HBox>
+    <TextField fx:id="firstNameField" prefWidth="300" GridPane.rowIndex="1" GridPane.columnIndex="1"
+               alignment="CENTER_LEFT"/>
+
+
+    <HBox alignment="CENTER_RIGHT" GridPane.rowIndex="2" GridPane.columnIndex="0">
+        <Label text="Фамилия:  " minWidth="-Infinity"/>
+    </HBox>
+    <TextField fx:id="lastNameField" prefWidth="300" GridPane.rowIndex="2" GridPane.columnIndex="1"
+               alignment="CENTER_LEFT"/>
+
+
+    <HBox alignment="CENTER_RIGHT" GridPane.rowIndex="3" GridPane.columnIndex="0">
+        <Label text="Номер телефона:  " minWidth="-Infinity"/>
+    </HBox>
+    <TextField fx:id="phoneNumberField" prefWidth="300" GridPane.rowIndex="3" GridPane.columnIndex="1"
+               alignment="CENTER_LEFT"/>
+
+
+    <HBox alignment="CENTER_RIGHT" GridPane.rowIndex="4" GridPane.columnIndex="0">
+        <Label text="Адрес: " minWidth="-Infinity"/>
+    </HBox>
+    <TextField fx:id="addressField" prefWidth="300" GridPane.rowIndex="4"
+               GridPane.columnIndex="1"
+               alignment="CENTER_LEFT"/>
+
+
+    <HBox alignment="CENTER_RIGHT" GridPane.rowIndex="5" GridPane.columnIndex="0">
+        <Label text="E-mail:  " minWidth="-Infinity"/>
+    </HBox>
+    <TextField fx:id="emailField" promptText="example@example.com" prefWidth="300" GridPane.rowIndex="5"
+               GridPane.columnIndex="1"
+               alignment="CENTER_LEFT"/>
+
+
+    <HBox alignment="CENTER_RIGHT" GridPane.rowIndex="6" GridPane.columnIndex="0">
+        <Label text="Имя пользователя:  " minWidth="-Infinity"/>
+    </HBox>
+    <TextField fx:id="loginField" prefWidth="300" GridPane.rowIndex="6" GridPane.columnIndex="1"
+               alignment="CENTER_LEFT"/>
+
+
+    <HBox alignment="CENTER_RIGHT" GridPane.rowIndex="7" GridPane.columnIndex="0">
+        <Label text="Пароль:  " minWidth="-Infinity"/>
+    </HBox>
+    <PasswordField fx:id="passwordField" prefWidth="300" GridPane.rowIndex="7" GridPane.columnIndex="1"
+                   alignment="CENTER_LEFT"/>
+
+
+    <HBox GridPane.rowIndex="8" GridPane.columnIndex="0" alignment="CENTER_RIGHT">
+        <Button fx:id="backButton" text="Назад" prefWidth="100" onAction="#backButtonClick"
+                alignment="BOTTOM_CENTER"/>
+    </HBox>
+
+    <HBox GridPane.rowIndex="8" GridPane.columnIndex="1" alignment="CENTER_RIGHT">
+        <Button fx:id="registerButton" text="Зарегистрироваться" prefWidth="200" onAction="#registerButtonClick"/>
+    </HBox>
+
+</GridPane>
